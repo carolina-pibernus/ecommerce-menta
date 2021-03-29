@@ -21,21 +21,31 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: mintcream;
 }
 .parrafo {
   color: #253b2d;
 }
 
-.App-link {
-  color: #61dafb;
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+li {
+  margin: 5%;
+}
+a{
+  text-decoration: none;
+  color: #277950;
+}
+a:hover {
+  color: mintcream;
+  font-size: larger;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
