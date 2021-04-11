@@ -1,6 +1,8 @@
-function ItemListContainer (props) {
+import ItemList from '../ItemList/ItemList'
+function ItemListContainer () {
     return (
-        <h4> {props.greeting} </h4>
+        <ItemList />
+
     )
 }
 

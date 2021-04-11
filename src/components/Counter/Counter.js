@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from 'semantic-ui-react'
+import './Counter.css'
 
 export default class Counter extends Component {
   constructor() {
@@ -23,11 +24,11 @@ export default class Counter extends Component {
     return (
       <div>
         <p>{this.state.count}</p>
-        <div >
-          <Button basic onClick={this.handleDecrement}>
+        <div>
+          <Button compact onClick={this.handleDecrement}>
             -
           </Button>
-          <Button basic onClick={this.handleIncrement}>
+          <Button compact onClick={this.handleIncrement}>
             +
           </Button>
         </div>

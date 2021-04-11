@@ -1,0 +1,15 @@
+.listado {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+.itemLista {
+    align-self: center;
+    width: 200px;
+    margin: 0% 2% 2% 2%;
+    font-size: 16px;
+    font-weight: normal;
+
+}
