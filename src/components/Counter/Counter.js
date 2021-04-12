@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Button } from 'semantic-ui-react'
 import './Counter.css'
 
 export default class Counter extends Component {
@@ -25,12 +24,12 @@ export default class Counter extends Component {
       <div>
         <p>{this.state.count}</p>
         <div>
-          <Button compact onClick={this.handleDecrement}>
+          <button className="compact" onClick={this.handleDecrement}>
             -
-          </Button>
-          <Button compact onClick={this.handleIncrement}>
+          </button>
+          <button className="compact" onClick={this.handleIncrement}>
             +
-          </Button>
+          </button>
         </div>
       </div>
     );
