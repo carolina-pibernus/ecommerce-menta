@@ -21,7 +21,7 @@ function Item ({producto}) {
 
                 <Counter />
               </Card.Content>
-              <Link to={`/productos/${id}`}> <button className='ui teal basic button'>Ver Detalle</button> </Link>
+              <Link to={{pathname:`/productos/${id}`, state:{producto:producto}}}> <button className='ui teal basic button'>Ver Detalle</button> </Link>
               <button className='ui olive button'>Agregar al Carrito</button>
              
              </Card>
