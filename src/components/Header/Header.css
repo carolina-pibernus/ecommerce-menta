@@ -10,26 +10,6 @@ header {
   padding-top: 30px;
 }
 
-ul {
-    padding-left: 5%;
-    padding-right: 5%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-}
-
-a{
-    font-size: 18px;
-  text-decoration: none;
-  color: #277950;
-}
-a:hover {
-  color: mintcream;
-  font-size: larger;
-  
-}
 h1 {
     color: mintcream;
     font-size: 35px;

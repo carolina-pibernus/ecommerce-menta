@@ -7,6 +7,7 @@ import { Card, Image } from 'semantic-ui-react'
 
 
 function Item ({producto}) {
+  const id= producto.id
    
         return (  
           <div className="itemLista">
@@ -20,7 +21,7 @@ function Item ({producto}) {
 
                 <Counter />
               </Card.Content>
-              <Link to="/ItemDetailContainer"> <button className='ui teal basic button'>Ver Detalle</button> </Link>
+              <Link to={`/productos/${id}`}> <button className='ui teal basic button'>Ver Detalle</button> </Link>
               <button className='ui olive button'>Agregar al Carrito</button>
              
              </Card>
