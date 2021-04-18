@@ -13,3 +13,18 @@
     font-weight: normal;
 
 }
+
+.selectCategoria {
+    margin: 2%;
+    color:  #277950;
+}
+.selectCategoria select {
+    background-color:mintcream;
+    color:  #277950;
+    border-radius: 10px;
+    opacity: 70%;
+}
+.selectCategoria select option {
+    opacity: 50%;
+
+}

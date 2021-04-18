@@ -10,9 +10,6 @@ header {
   padding-top: 30px;
 }
 
-h1 {
-    color: mintcream;
-    font-size: 35px;
-    margin-top:40px;
-    padding-top: 50px;
+.logo {
+  width: 20%;
 }

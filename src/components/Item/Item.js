@@ -1,14 +1,11 @@
 import 'semantic-ui-css/semantic.min.css'
 import '../ItemListContainer/ItemListContainer.css'
 import {Link} from 'react-router-dom'
-import Counter from '../Counter/Counter.js'
 import { Card, Image } from 'semantic-ui-react'
 
 
 
-function Item ({producto}) {
-  const id= producto.id
-   
+function Item ({producto}) {  
         return (  
           <div className="itemLista">
              <Card>
@@ -18,12 +15,9 @@ function Item ({producto}) {
                 <Card.Meta>
                  <span className='date'>{producto.precio}</span>
                 </Card.Meta>
+                <Link to={{pathname:`/productos/${producto.categoria}/${producto.id}`, state:{producto:producto}}}> <button className='ui olive button'>Ver Detalle</button> </Link>
 
-                <Counter />
-              </Card.Content>
-              <Link to={{pathname:`/productos/${id}`, state:{producto:producto}}}> <button className='ui teal basic button'>Ver Detalle</button> </Link>
-              <button className='ui olive button'>Agregar al Carrito</button>
-             
+              </Card.Content>     
              </Card>
           </div>   
         )

@@ -17,7 +17,7 @@ function App() {
          <Route path="/" exact component={Home}/>
          <Route path="/Contacto" component={Contacto}/>
          <Route path="/productos" exact component={ItemListContainer}/>
-         <Route path="/productos/:id" component={ItemDetailContainer} />
+         <Route path="/productos/:id/:id" component={ItemDetailContainer} />
        </Switch>
        <Footer/>
     </div>
