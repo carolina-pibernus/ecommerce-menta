@@ -1,6 +1,7 @@
 .listado {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: baseline;
     justify-content: space-around;
 }
@@ -28,3 +29,5 @@
     opacity: 50%;
 
 }
+
+

@@ -14,6 +14,7 @@ function ItemListContainer () {
                   <option value="todo">TODO</option>
                   <option value="teycafe">TE y CAFE</option>
                   <option value="vajilla">VAJILLA</option>
+                  <option value="manteleria">MANTELERIA</option>
               </select>
             </div>  
             <ItemList categoria={categoria} />
