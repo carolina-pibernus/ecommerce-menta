@@ -3,3 +3,9 @@ p {
     font-size: 16px;
     padding-top: 2%;
 }
+.oculto{
+    display: none;
+}
+.visible {
+    display:show;
+}

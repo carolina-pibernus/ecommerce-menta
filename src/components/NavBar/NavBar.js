@@ -11,7 +11,7 @@ function NavBar () {
             <Link to="/"><li>HOME</li></Link>
             <Link to="/productos"> <li>PRODUCTOS</li> </Link>
             <Link to="/Contacto"><li>CONTACTO</li></Link>
-            <Link to="/Cart"><li> <CartWidget /> </li></Link>
+            <Link to={{pathname:"/cart", state:[{producto:[]}, {cantidad:[]}]}}><li> <CartWidget /> </li></Link>
           </ul>
         </nav>
     )
