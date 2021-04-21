@@ -1,0 +1,20 @@
+.itemCart {
+    background-color: mintcream;
+    opacity: 80%;
+    width: 80%;
+    margin: 1% 10% 1% 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.itemCart h6 {
+    font-size: 16px;
+    margin: 2%;
+}
+.itemCart h4 {
+    font-size: 18px;
+    margin: 2%;
+}

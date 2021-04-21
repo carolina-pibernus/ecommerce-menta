@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home'
 import Contacto from './components/Contacto/Contacto'
 import Cart from './components/Cart/Cart'
+import {CartProvider} from './components/CartContext/CartContext'
 import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer'
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom'
 import './App.css';
@@ -12,6 +13,7 @@ import './App.css';
 function App() {
   return (
     <Router>
+      <CartProvider>
     <div className="App">
       <Header/>
        <Switch>
@@ -23,6 +25,7 @@ function App() {
        </Switch>
        <Footer/>
     </div>
+    </CartProvider>
     </Router>
   );
 }
