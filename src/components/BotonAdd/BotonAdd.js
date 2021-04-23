@@ -7,13 +7,13 @@ export const BotonAdd = ({verCounter, setVerCounter, producto, count, visibilida
     const [articulos, setArticulos] = useContext(CartContext)
     const [error, setError] = useState("")
     const pasarData = () => {
-        const existe = articulos.some((articulo)=> {
+        articulos.some((articulo)=> {
           return articulo.producto.id === producto.id}) === false ? noEncontro() : setError("YA AGREGASTE ESTE ITEM")}
       
-          const noEncontro = () => {
+    const noEncontro = () => {
             setVerCounter("oculto")
             setArticulos(prevArticulos => [...prevArticulos, {producto: producto, cantidad: count}])
-        }
+    }
     return (
         <div>
         <button className={`ui olive button ${visibilidad} ${verCounter}`}  onClick={pasarData}>Agregar al Carrito</button> 

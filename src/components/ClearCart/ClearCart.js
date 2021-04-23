@@ -13,7 +13,7 @@ const ClearCart = () => {
 
     return (
         <div>
-            <button className="ui button teal" onClick={eliminar}>Eliminar Todo</button>
+            <button className="ui button classic" onClick={eliminar}>Eliminar Todo</button>
         </div>
     )
 }

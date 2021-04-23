@@ -3,10 +3,12 @@
     opacity: 80%;
     width: 80%;
     margin: 1% 10% 1% 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "itemName botonRemove"
+    "itemDescription itemDescription";
     border-radius: 10px;
 }
 
@@ -14,7 +16,30 @@
     font-size: 16px;
     margin: 2%;
 }
-.itemCart h4 {
+.itemName {
     font-size: 18px;
-    margin: 2%;
+    margin: 1%;
+    width: 80%;
+    text-align: left;
+    text-indent: 4%;
+    grid-area: itemName;
+    padding:2% 0% 2% 0%;
+}
+ul.itemDescription {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    text-align: left;
+    width: 100%;
+    grid-area: itemDescription;
+}
+ul.itemDescription li{
+    text-align: left;
+    margin: 1%;
+}
+
+.botonRemove {
+    grid-area: botonRemove;
 }

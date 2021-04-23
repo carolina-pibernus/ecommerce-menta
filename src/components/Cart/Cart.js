@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
+import {Link} from 'react-router-dom'
 import {CartContext} from '../CartContext/CartContext'
 import RemoveItem from '../RemoveItem/RemoveItem'
 import ClearCart from '../ClearCart/ClearCart'
@@ -8,8 +9,11 @@ import './Cart.css'
 
 const Cart = () => {
    const [articulos, setArticulos]= useContext(CartContext)
-   const [total, setTotal] = useState(0)
-   const ver = articulos.length === 0 ? "Aún no sumaste productos" : <ClearCart/>
+
+   const total = articulos.reduce((currentTotal, articulo) =>{
+     return (articulo.cantidad * articulo.producto.precio) + currentTotal}, 0)
+   const cantidadItems = articulos.reduce((currentTotal, articulo) =>{
+     return articulo.cantidad + currentTotal}, 0)  
        
     return (
         <div>
@@ -20,36 +24,23 @@ const Cart = () => {
              return(
               <div key={articulo.producto.id} className="itemCart">
            
-                <h4>Producto: {articulo.producto.nombre}</h4>
-                <h6>Precio por unidad: $ {articulo.producto.precio}</h6>
-                <h6>Cantidad: {articulo.cantidad}</h6>
-                
-                <h5>Subtotal: $ {subtotal}</h5>
-                <RemoveItem articulo={articulo}/>
+                <h4 className="itemName">Producto: {articulo.producto.nombre}</h4>
+                <ul className="itemDescription">
+                  <li>Precio por unidad: $ {articulo.producto.precio}</li>
+                  <li>Cantidad: {articulo.cantidad}</li>
+                  <li>Subtotal: $ {subtotal}</li>
+                </ul>
+                <RemoveItem articulo={articulo} className="botonRemove"/>
                 
               </div>  
              )
          })}
-          {ver}
+          <h4>{articulos.length > 0 ? `Cantidad de Items: ${cantidadItems}` : null}</h4>
+          <h4>{articulos.length === 0 ? "Aún no sumaste productos" : `Total de compra: ${total}`} </h4>
+          {articulos.length === 0 ? <Link to="/productos"><button className="ui button teal">Ir a Productos</button></Link> : <ClearCart/>}
+
         </div>
     )
 }
 
 export default Cart
-
-/*
-    const location = useLocation()
-    const producto = location.state[0].producto
-    const cantidad = location.state[1].cantidad
-    const total = producto.precio * cantidad
-
-<p>{articulos[0].producto.nombre}</p>
-            <h5>Carrito de compras</h5>
-            <h4>Producto: {articulos[0].producto.nombre}</h4>
-            <h6>Precio por unidad: $ {articulos[0].producto.precio}</h6>
-            <h6>Cantidad: {cantidad}</h6>
-            
-            <h5>Total a pagar: $ {total}</h5>
-            <button className="ui button teal">Confirmar Compra</button>
-
-            */

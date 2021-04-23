@@ -1,10 +1,33 @@
 .fotoDetalle {
+    margin: 3%;
     width:400px;
     border-radius: 10px;
+    grid-area: fotoDetalle;
 }
 .ocultar {
     display: none;
 }
 .mostrar {
     display: show; 
+}
+.itemDetail {
+    margin: 4%;
+    background-color: mintcream;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas: 
+        "fotoDetalle itemNombre"
+        "fotoDetalle contenedorPropiedades"
+        ;
+
+}
+.contenedorPropiedades {
+    grid-area: contenedorPropiedades;
+}
+.itemNombre {
+    grid-area: itemNombre;
+    color: rgb(5, 109, 83);
+    
 }

@@ -4,7 +4,6 @@ import './Counter.css'
 
 
 const Counter = ({setear, producto}) => {
-  
   const [count, setCount] = useState(0)
 
   const handleDecrement  = () => {
@@ -30,24 +29,3 @@ const Counter = ({setear, producto}) => {
 }
 
 export default Counter
-
-/*
-const [articulos, setArticulos] = useContext(CartContext)
-const [error, setError] = useState("")
-
-const pasarData = () => {
-    const existe = articulos.some((articulo)=> {
-      return articulo.producto.id === producto.id}) == false ? noEncontro() : setError("YA AGREGASTE ESTE ITEM")}
-  
-  const noEncontro = () => {
-    setear(count)
-    setVerCounter("oculto") 
-    setArticulos(prevArticulos => [...prevArticulos, {producto: producto, cantidad: count}])
-  }
-
-  <p>{error}</p>
-        <button className={`ui olive button ${visibilidad}`}  onClick={pasarData}>Agregar al Carrito</button> 
-
-
-
-  */
