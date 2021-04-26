@@ -1,26 +1,16 @@
 import ItemList from '../ItemList/ItemList'
-import React, {useState} from 'react'
+import React from 'react'
+import {useLocation} from 'react-router-dom'
 
-function ItemListContainer () {
-   const [categoria, setCategoria] = useState("todo")
+function ItemListContainer (categoria) {
+    
+    const location= useLocation()
+    const cat = categoria.categoria === "todo" ? "todo" : location.state.categoria
+
     return (
         <div>
-            <div className="selectCategoria">
-             <label>Elige una categoría:</label>
-              <select onChange={(e)=> {
-                  setCategoria(e.target.value)
-                  
-              }}>
-                  <option value="todo">TODO</option>
-                  <option value="teycafe">TE y CAFE</option>
-                  <option value="vajilla">VAJILLA</option>
-                  <option value="manteleria">MANTELERIA</option>
-              </select>
-            </div>  
-            <ItemList categoria={categoria} />
+            <ItemList categoria={cat} />
         </div>
-
     )
 }
-
 export default ItemListContainer

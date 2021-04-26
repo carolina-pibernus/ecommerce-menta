@@ -20,6 +20,31 @@ nav ul li{
 }
 nav ul li:hover {
   color: mintcream;
-  font-size: larger;
-  
+  font-size: larger; 
 }
+
+.subMenu {
+  display: none;
+}
+.menuProductos:hover .subMenu {
+  display: inline;
+  position: fixed;
+  z-index: 5;
+  background-color: #86d4b0;
+  opacity: 90%;
+  padding-left: 0%;
+ 
+}
+.menuProductos:hover .subMenu li {
+  padding: auto;
+  font-size: 15px;
+  text-align: left;
+}
+.menuProductos {
+  font-size: 18px;
+  text-decoration: none;
+  color: #277950;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+

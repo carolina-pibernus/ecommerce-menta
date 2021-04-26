@@ -12,7 +12,13 @@ function NavBar () {
         <nav> 
           <ul>
             <Link to="/"><li>HOME</li></Link>
-            <Link to="/productos"> <li>PRODUCTOS</li> </Link>
+            <li className="menuProductos">PRODUCTOS
+              <ul className="subMenu">
+              <Link to="/productos"><li>VER CATEGORIAS</li></Link>   
+              <Link to={{pathname:"/productos/vajilla", state:{categoria: "vajilla"}}}> <li>VAJILLA</li></Link>
+              <Link to={{pathname:"/productos/teycafe", state:{categoria: "teycafe"}}}> <li>TE Y CAFE</li> </Link>
+              <Link to={{pathname:"/productos/manteleria", state:{categoria: "manteleria"}}}><li>MANTELERIA</li> </Link> </ul>
+            </li>
             <Link to="/Contacto"><li>CONTACTO</li></Link>
             <Link to="/cart"><li> {articulos.length > 0 ? <CartWidgetFull /> : <CartWidget />} </li></Link>
           </ul>
