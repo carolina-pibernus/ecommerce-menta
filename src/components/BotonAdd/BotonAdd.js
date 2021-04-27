@@ -1,6 +1,6 @@
 import React, {useContext, useState}from 'react'
 import 'semantic-ui-css/semantic.min.css'
-import {CartContext} from '../CartContext/CartContext'
+import {CartContext} from '../../context/CartContext/CartContext'
 
 
 export const BotonAdd = ({verCounter, setVerCounter, producto, count, visibilidad}) => {

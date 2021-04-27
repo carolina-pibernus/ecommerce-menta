@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import {Link} from 'react-router-dom'
-import {CartContext} from '../CartContext/CartContext'
-import RemoveItem from '../RemoveItem/RemoveItem'
-import ClearCart from '../ClearCart/ClearCart'
+import {CartContext} from '../../context/CartContext/CartContext'
+import RemoveItem from '../../components/RemoveItem/RemoveItem'
+import ClearCart from '../../components/ClearCart/ClearCart'
 import 'semantic-ui-css/semantic.min.css'
 import './Cart.css'
 
@@ -11,7 +11,7 @@ const Cart = () => {
    const [articulos, setArticulos]= useContext(CartContext)
 
    const total = articulos.reduce((currentTotal, articulo) =>{
-     return (articulo.cantidad * articulo.producto.precio) + currentTotal}, 0)
+     return (articulo.cantidad * articulo.producto.price) + currentTotal}, 0)
    const cantidadItems = articulos.reduce((currentTotal, articulo) =>{
      return articulo.cantidad + currentTotal}, 0)  
        
@@ -20,13 +20,13 @@ const Cart = () => {
           <h3>Tu Carrito</h3>
 
          {articulos.map((articulo)=> {
-             const subtotal = articulo.cantidad * articulo.producto.precio
+             const subtotal = articulo.cantidad * articulo.producto.price
              return(
               <div key={articulo.producto.id} className="itemCart">
            
-                <h4 className="itemName">Producto: {articulo.producto.nombre}</h4>
+                <h4 className="itemName">Producto: {articulo.producto.title}</h4>
                 <ul className="itemDescription">
-                  <li>Precio por unidad: $ {articulo.producto.precio}</li>
+                  <li>Precio por unidad: $ {articulo.producto.price}</li>
                   <li>Cantidad: {articulo.cantidad}</li>
                   <li>Subtotal: $ {subtotal}</li>
                 </ul>

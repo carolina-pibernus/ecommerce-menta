@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.css'
-import ItemListContainer from '../ItemListContainer/ItemListContainer'
+import ItemListContainer from '../../components/ItemListContainer/ItemListContainer'
 
 function Home() {
     return (

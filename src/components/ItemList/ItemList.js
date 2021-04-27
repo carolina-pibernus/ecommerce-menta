@@ -7,7 +7,7 @@ import {ProductsContext} from '../../context/ProductsContext/ProductsContext'
 const ItemList = (categoria) => {
     const listaProd = useContext(ProductsContext)  
     const productos = categoria.categoria === "todo" ? listaProd : listaProd.filter((prod) => {
-        return prod.categoria === categoria.categoria
+        return prod.categoryId === categoria.categoria
     })
 
     return (

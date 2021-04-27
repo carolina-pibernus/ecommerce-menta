@@ -8,13 +8,13 @@ import { Card, Image } from 'semantic-ui-react'
 function Item ({producto}) {  
         return (  
           <div className="itemLista">
-            <Link to={{pathname:`/productos/${producto.categoria}/${producto.id}`, state:{producto:producto}}}> 
+            <Link to={{pathname:`/productos/${producto.categoryId}/${producto.id}`, state:{producto:producto}}}> 
              <Card>
-              <Image src={producto.imagen} wrapped ui={false} />
+              <Image src={producto.image} wrapped ui={false} />
               <Card.Content>
-                <Card.Header>{producto.nombre}</Card.Header>
+                <Card.Header>{producto.title}</Card.Header>
                 <Card.Meta>
-                 <span className='date'>{producto.precio}</span>
+                 <span className='date'>{producto.price}</span>
                 </Card.Meta>
                 <button className='ui olive button'>Ver Detalle</button>
 

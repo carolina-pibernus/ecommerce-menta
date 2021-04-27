@@ -5,8 +5,7 @@ import './Productos.css'
 const Productos = () => {
     return (
         <div className="categorias">
-
-            
+           
          <Link to={{pathname:"/productos/todo", state:{categoria: "todo"}}}>
             <div className="divCategoria">
                 <img alt="imagen" src="https://images-na.ssl-images-amazon.com/images/I/71bQGbyXvQL._AC_SL1500_.jpg" ></img>

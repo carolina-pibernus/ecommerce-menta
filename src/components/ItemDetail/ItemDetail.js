@@ -13,11 +13,11 @@ const mostrarFinalizar = verCounter === "oculto" ? "ui button teal" : "ocultar"
 const habilitarAgregar = cantidad >= 1 ? "active" : "disabled"
     return(
         <div className="itemDetail">
-            <h3 className="itemNombre">{propiedad.nombre}</h3>
-            <img src={propiedad.imagen} alt="imagen producto" className="fotoDetalle" />
+            <h3 className="itemNombre">{propiedad.title}</h3>
+            <img src={propiedad.image} alt="imagen producto" className="fotoDetalle" />
             <div className="contenedorPropiedades">
-            <h5> $ {propiedad.precio} </h5>
-            <p> {propiedad.descripcion}</p>
+            <h5> $ {propiedad.price} </h5>
+            <p> {propiedad.description}</p>
            
               <div className={verCounter}> 
               <Counter setear={setCantidad} producto={producto} verCounter={verCounter}/>

@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {CartContext} from '../CartContext/CartContext'
+import {CartContext} from '../../context/CartContext/CartContext'
 import 'semantic-ui-css/semantic.min.css'
 
 
