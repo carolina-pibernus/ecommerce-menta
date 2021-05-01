@@ -31,14 +31,15 @@ const Cart = () => {
                   <li>Subtotal: $ {subtotal}</li>
                 </ul>
                 <RemoveItem articulo={articulo} className="botonRemove"/>
+               
                 
               </div>  
              )
          })}
           <h4>{articulos.length > 0 ? `Cantidad de Items: ${cantidadItems}` : null}</h4>
           <h4>{articulos.length === 0 ? "Aún no sumaste productos" : `Total de compra: ${total}`} </h4>
-          {articulos.length === 0 ? <Link to="/productos"><button className="ui button teal">Ir a Productos</button></Link> : <ClearCart/>}
-
+          {articulos.length === 0 ? <Link to="/productos"><button className="ui button teal">Ir a Productos</button></Link> : <div><Link to="/checkout"><button className="ui button olive">Continuar Compra</button></Link> <ClearCart/></div>}
+          
         </div>
     )
 }

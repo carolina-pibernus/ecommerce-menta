@@ -10,6 +10,7 @@ import {ProductsProvider} from './context/ProductsContext/ProductsContext'
 import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer'
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom'
 import './App.css';
+import Checkout from './views/Checkout/Checkout'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
          <Route path="/productos/:id" exact component={ItemListContainer} />
          <Route path="/productos/:id/:id" component={ItemDetailContainer} />
          <Route path="/cart" component={Cart} />
+         <Route path="/checkout" component={Checkout}/>
        </Switch>
        <Footer/>
     </div>

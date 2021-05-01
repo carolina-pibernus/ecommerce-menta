@@ -1,0 +1,20 @@
+.divCheckout {
+    background-color: #dff3e9;
+    width: 90%;
+    border-radius: 10px;
+    align-self: center;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+ 
+}
+.detalles {
+    margin: 2%;
+    width: 50%;
+}
+.detalles ul {
+    display: list-item;
+    text-align: left;
+}
