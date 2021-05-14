@@ -1,21 +1,16 @@
 import React, { useContext } from 'react'
-import {Link} from 'react-router-dom'
 import {CartContext} from '../../context/CartContext/CartContext'
-import RemoveItem from '../../components/RemoveItem/RemoveItem'
-import ClearCart from '../../components/ClearCart/ClearCart'
+import {Button, LinkButton} from '../../components/Buttons/Buttons'
 import 'semantic-ui-css/semantic.min.css'
 import './Cart.css'
+import { UserContext } from '../../context/UserContext/UserContext'
 
 
 const Cart = () => {
-   const [articulos, setArticulos]= useContext(CartContext)
-
-   const total = articulos.reduce((currentTotal, articulo) =>{
-     return (articulo.cantidad * articulo.producto.price) + currentTotal}, 0)
-   const cantidadItems = articulos.reduce((currentTotal, articulo) =>{
-     return articulo.cantidad + currentTotal}, 0)  
-       
-    return (
+  const [articulos, setArticulos, cartTotal, cantidadItems]= useContext(CartContext)
+  const [logged] = useContext(UserContext)
+           
+  return (
         <div>
           <h3>Tu Carrito</h3>
 
@@ -30,15 +25,21 @@ const Cart = () => {
                   <li>Cantidad: {articulo.cantidad}</li>
                   <li>Subtotal: $ {subtotal}</li>
                 </ul>
-                <RemoveItem articulo={articulo} className="botonRemove"/>
+                <Button classes="botonRemove button ui classic" text="Eliminar Item" click={()=> {
+                 const filtrarItems = articulos.filter((art) => {
+                 return art !== articulo});    setArticulos(filtrarItems)}}/>
                
                 
               </div>  
              )
          })}
           <h4>{articulos.length > 0 ? `Cantidad de Items: ${cantidadItems}` : null}</h4>
-          <h4>{articulos.length === 0 ? "Aún no sumaste productos" : `Total de compra: ${total}`} </h4>
-          {articulos.length === 0 ? <Link to="/productos"><button className="ui button teal">Ir a Productos</button></Link> : <div><Link to="/checkout"><button className="ui button olive">Continuar Compra</button></Link> <ClearCart/></div>}
+          <h4>{articulos.length === 0 ? "Aún no sumaste productos" : `Total de compra: ${cartTotal}`} </h4>
+          {articulos.length === 0 ? <LinkButton linkTo="/productos" classes="ui button teal" text="Ir a Productos"/>
+          : <div> 
+            <LinkButton linkTo={logged ? "checkout" : "login"} classes="ui button olive" text="Continuar Compra"/> 
+            <Button classes="ui button classic" text="Vaciar Carrito" click={() => {setArticulos([])}}/>
+            </div>}
           
         </div>
     )

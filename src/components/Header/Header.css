@@ -1,15 +1,35 @@
-header {
+.header {
   background-color: #80ceaa;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
   font-size: calc(10px + 2vmin);
   color: mintcream;
   padding-top: 30px;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 40% 10%;
+  grid-template-areas: 
+  "logoDiv botonesDiv"
+  "navbarDiv navbarDiv";
 }
 
 .logo {
-  width: 20%;
+  width: 30%;
+
+}
+
+.botonesDiv {
+  text-align: right;
+  padding: 1%;
+  grid-area: botonesDiv;
+
+}
+.botonesDiv p{
+  font-size: 0.6em;
+}
+.logoDiv {
+  grid-area: logoDiv;
+
+}
+.navbarDiv {
+  grid-area: navbarDiv;
 }

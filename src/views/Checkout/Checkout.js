@@ -1,36 +1,23 @@
 import OrderForm from '../../components/OrderForm/OrderForm'
-import React, {useEffect, useState} from 'react'
+import React, {useState, useContext} from 'react'
 import './Checkout.css'
 import { db } from '../../firebase';
 
-
 const Checkout = () => {
-    const [orders, setOrders] = useState([])
     const [orderID, setOrderID] = useState("")
+    const [isAdded, setIsAdded] = useState(false)
     const add = async (a) => {
-        await db.collection('orders').doc().set(a);
-      };
-
-    const getOrders = async () => {
-          
-      db.collection('orders').onSnapshot((querySnapshot) => {
-        const docs = [];
-        querySnapshot.forEach((doc) => {
-          setOrderID(doc.id)
-          docs.push({ ...doc.data(), id: doc.id });
-        });
-        setOrders(docs);
-      });
-    };
-    useEffect(() => {
-        getOrders();
-      }, []);
-  
-
-    return (
-        <div className="divCheckout">
-            <OrderForm  add={add} orders={orders} orderID={orderID}/>        
-
+      await db.collection('orders').add(a).then(({id}) => {
+        setOrderID(id)
+      })  };
+    const processId = orderID !== "" ? <div> <h3>¡Gracias por tu compra!</h3> 
+    <h5>Tu código de orden es  {orderID}  </h5>
+        <button>ver detalles</button> </div> : <div className="ui active inverted dimmer">
+    <div className="ui text loader">Estamos procesando tu pedido</div> </div>
+    
+        return (
+        <div className="divCheckout segment">
+          {isAdded ? processId : <OrderForm  add={add} setIsAdded={setIsAdded}/> }          
         </div>
     )
 }
