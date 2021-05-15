@@ -22,7 +22,7 @@ const LogIn = () => {
                     <CreateAccount/>
                     <Button click={()=>{setClick(false)}} classes="ui button orange" text="Cancelar" />
                 </div>}
-        </div> : <div> <h4>Bienvenidx!</h4> 
+        </div> : <div> <h4>Bienvenidx {user.displayName}</h4> 
         {articulos.length >= 1 ? <LinkButton linkTo="/checkout" text="Continuar Compra" classes="ui olive button"/> : null} </div>}
         
         </div>

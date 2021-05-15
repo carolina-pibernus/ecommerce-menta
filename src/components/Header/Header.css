@@ -1,35 +1,17 @@
-.header {
+header {
   background-color: #80ceaa;
   min-height: 100vh;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: mintcream;
   padding-top: 30px;
-  grid-template-columns: 80% 20%;
-  grid-template-rows: 40% 10%;
-  grid-template-areas: 
-  "logoDiv botonesDiv"
-  "navbarDiv navbarDiv";
 }
 
 .logo {
-  width: 30%;
-
+  width: 20%;
 }
 
-.botonesDiv {
-  text-align: right;
-  padding: 1%;
-  grid-area: botonesDiv;
 
-}
-.botonesDiv p{
-  font-size: 0.6em;
-}
-.logoDiv {
-  grid-area: logoDiv;
-
-}
-.navbarDiv {
-  grid-area: navbarDiv;
-}

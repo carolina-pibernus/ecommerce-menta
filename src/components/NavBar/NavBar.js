@@ -4,10 +4,12 @@ import CartWidgetFull from '../CartWidgetFull/CartWidgetFull'
 import {Link} from 'react-router-dom'
 import './NavBar.css'
 import { CartContext } from '../../context/CartContext/CartContext'
+import { UserContext } from '../../context/UserContext/UserContext'
 
 
 function NavBar () {
   const [articulos] = useContext(CartContext)
+  const [logged] = useContext(UserContext)
     return (
         <nav> 
           <ul>
@@ -19,7 +21,9 @@ function NavBar () {
               <Link to={{pathname:"/productos/teycafe", state:{categoria: "teycafe"}}}> <li>TE Y CAFE</li> </Link>
               <Link to={{pathname:"/productos/manteleria", state:{categoria: "manteleria"}}}><li>MANTELERIA</li> </Link> </ul>
             </li>
+
             <Link to="/Contacto"><li>CONTACTO</li></Link>
+            {logged ? <Link to="/orders">MIS COMPRAS</Link> : null} 
             <Link to="/cart"><li> {articulos.length > 0 ? <CartWidgetFull /> : <CartWidget />} </li></Link>
           </ul>
         </nav>

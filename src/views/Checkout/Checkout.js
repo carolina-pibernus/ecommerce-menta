@@ -1,5 +1,5 @@
 import OrderForm from '../../components/OrderForm/OrderForm'
-import React, {useState, useContext} from 'react'
+import React, {useState} from 'react'
 import './Checkout.css'
 import { db } from '../../firebase';
 

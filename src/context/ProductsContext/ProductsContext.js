@@ -17,7 +17,7 @@ export const ProductsProvider = (props) => {
     }
     useEffect(() => {
         getProductos()
-    })
+    }, [])
 
     return (
         <ProductsContext.Provider value={productos}> {props.children} </ProductsContext.Provider>

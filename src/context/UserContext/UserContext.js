@@ -8,21 +8,30 @@ export const UserProvider = (props) => {
 
     const [user, setUser] = useState([])
     const [logged, setLogged] = useState(false)
+    const [userName, setUserName] = useState("")
+    const changeValues = (a, b) => {
+        setUser(a)
+        setUserName(b)
+    }
+    const loggedUser = () => {
+        setLogged(true)
+        const userLogged = firebase.auth().currentUser
+        changeValues (userLogged.providerData[0], userLogged.displayName)
+
+    }
+
     const getUser = async () => {
         const isLogged = firebase.auth().onAuthStateChanged((u)=> {
-                u ? setLogged(true) : setLogged(false)  
+                u ? loggedUser() : setLogged(false)  
               });
-              
-            const userLogged = firebase.auth().currentUser
-            userLogged ? setUser(userLogged.providerData[0]) : setUser(null)
-
         }
         useEffect(() => {
             getUser()
-        })
+           
+        }, [])
     
     return (
-        <UserContext.Provider value={[user, logged]}> {props.children} </UserContext.Provider>
+        <UserContext.Provider value={[user, logged, userName]}> {props.children} </UserContext.Provider>
     )
 }
 

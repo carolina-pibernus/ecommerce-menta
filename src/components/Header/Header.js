@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect}from 'react'
+import React, {useContext}from 'react'
 import NavBar from '../NavBar/NavBar'
 import './Header.css'
 import logo from './logo.png'
@@ -10,15 +10,12 @@ import { UserContext } from '../../context/UserContext/UserContext'
 
 function Header () {
   const [user, logged] = useContext(UserContext)
-  const [userName, setUserName] = useState("")
-  useEffect(() => {
-     setUserName(user.displayName)
-  })
+
 
   return (
     <div className="header">
-      <div className="botonesDiv">{logged ? <div> <p>¡HOLA, {userName.toUpperCase()}! </p>
-        <LinkButton linkTo="/orders" text="Mis Compras" classes="ui button compact"/> <SignOut/>  </div>
+      <div className="botonesDiv">{logged ? <div> <p> {user.email} </p>
+         <SignOut/>  </div>
            : <LinkButton linkTo="/login" classes="ui button compact" text="LogIn" />}</div>
       
       <div className="logoDiv">
@@ -32,3 +29,11 @@ function Header () {
 }
 
 export default Header
+
+/*
+  const [userName, setUserName] = useState("")
+  useEffect(() => {
+    if (logged != {}) {
+     setUserName(user.displayName) }
+  }, [user])
+  */

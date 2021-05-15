@@ -24,7 +24,6 @@ const CreateAccount =() => {
       // ...
       })
       .catch((error) => {
-      var errorCode = error.code;
       var errorMessage = error.message;
       console.log(errorMessage)
       // ..
@@ -38,9 +37,8 @@ const CreateAccount =() => {
     displayName: values.name,
     phoneNumber: values.phone
   }).then(function() {
-    // Update successful.
   }).catch(function(error) {
-    // An error happened.
+    console.log(error)
   });
   }
      return (
