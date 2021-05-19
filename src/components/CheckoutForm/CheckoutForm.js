@@ -12,7 +12,7 @@ const initialValues = {
     phone: "",
 }
 
-const OrderForm = ({add, setIsAdded}) => {
+const CheckoutForm = ({add, setIsAdded}) => {
     const [articulos, setArticulos, cartTotal, cantidadItems]= useContext(CartContext)
     const products = useContext(ProductsContext)
     const [logged, user] = useContext(UserContext)
@@ -40,7 +40,6 @@ const OrderForm = ({add, setIsAdded}) => {
             batch.update(item, {"stock": newStock});
         })
         batch.commit().then(() => {
-            console.log("Desconto")
         })
     }
     const handleSubmit = (e) => {
@@ -55,7 +54,6 @@ const OrderForm = ({add, setIsAdded}) => {
        const { name, value } = e.target;
        setValues({ ...values, [name]: value });
       };  
-     console.log(user)
     return (
         <div className="divForm">
         { logged ? 
@@ -63,7 +61,7 @@ const OrderForm = ({add, setIsAdded}) => {
             <h3>Completa tu compra</h3>
             <div className="userData">
                 <h5 className="userName">Comprador: {user.displayName}</h5>
-                <h5>{user.uid}</h5>
+                <h5>Recibiras el detalle de tu compra en: {user.uid}</h5>
             </div>
             <form className="ui form checkoutForm" onSubmit={handleSubmit}>
                
@@ -91,4 +89,4 @@ const OrderForm = ({add, setIsAdded}) => {
     )
 }
 
-export default OrderForm
+export default CheckoutForm

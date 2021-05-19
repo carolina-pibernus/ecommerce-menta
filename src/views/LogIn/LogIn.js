@@ -24,8 +24,8 @@ const LogIn = () => {
                     <Button click={()=>{setClick(false)}} classes="ui button classic compact" text="Cancelar" /> 
                    
                 </div>}
-        </div> : <div> <h4>BIENVENIDX {user.displayName}</h4> 
-        {articulos.length >= 1 ? <LinkButton linkTo="/checkout" text="Continuar Compra" classes="ui olive button"/> : null} </div>}
+        </div> : <div> <h4 className="mensajeBienvenida">¡Bienvenidx, {user.displayName}!</h4> 
+        {articulos.length >= 1 ? <LinkButton linkTo="/checkout" text="Continuar Compra" classes="ui olive button compact"/> : null} </div>}
         
         </div>
     )

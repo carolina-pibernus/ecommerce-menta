@@ -25,7 +25,7 @@ const Checkout = () => {
       </div>
     ) : (
       <div className="ui active inverted dimmer">
-        <div className="ui text loader">Estamos procesando tu pedido</div>{" "}
+        <div className="ui text loader">Por favor aguarda, estamos procesando tu pedido</div>{" "}
       </div>
     );
 

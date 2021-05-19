@@ -4,7 +4,7 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: auto auto 1% auto;
 }
 .contacto h3 {
     color: #277950;

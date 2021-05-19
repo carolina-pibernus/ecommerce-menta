@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     align-items: baseline;
     justify-content: space-evenly;
+    margin: auto auto 1% auto;
 }
 .divCategoria {
     margin: 1%;
@@ -15,7 +16,7 @@
 }
 .divCategoria h3 {
     font-size: 16px;
-    color: gray;
+    color: #277950;
     width: 100%;
     text-align: center; 
     margin: auto;

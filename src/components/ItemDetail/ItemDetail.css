@@ -1,6 +1,6 @@
 .itemDetail {
     margin: 4%;
-    background-color: mintcream;
+    background-color: #dff3e9;
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -29,6 +29,7 @@
 }
 .itemDescription{
     margin: auto 5% auto 5%;
+    font-size: 15px;
 }
 .stock {
     color: rgb(5, 109, 83);

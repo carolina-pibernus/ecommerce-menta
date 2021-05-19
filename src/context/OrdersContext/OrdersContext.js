@@ -26,8 +26,8 @@ export const OrdersProvider = (props) => {
  .catch()}
  
  useEffect(() => {
-     if (logged)
-     getOrders()
+     if (logged){
+     getOrders()}
  });
 
  return (
