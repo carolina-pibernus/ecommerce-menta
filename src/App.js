@@ -10,6 +10,8 @@ import Orders from './views/Orders/Orders'
 import {CartProvider} from './context/CartContext/CartContext'
 import {ProductsProvider} from './context/ProductsContext/ProductsContext'
 import { UserProvider } from './context/UserContext/UserContext'
+import { OrdersProvider} from './context/OrdersContext/OrdersContext'
+
 
 import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer'
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom'
@@ -23,6 +25,7 @@ function App() {
       <ProductsProvider>
       <CartProvider>
          <UserProvider>
+           <OrdersProvider>
          
         
     <div className="App">
@@ -37,9 +40,12 @@ function App() {
          <Route path="/checkout" component={Checkout}/>
          <Route path="/login" component={LogIn} />
          <Route path="/orders" component={Orders} />
+
+
        </Switch>
        <Footer/>
     </div>
+    </OrdersProvider>
     </UserProvider> 
      </CartProvider>
     </ProductsProvider>

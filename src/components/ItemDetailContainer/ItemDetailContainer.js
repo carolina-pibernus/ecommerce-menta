@@ -6,7 +6,7 @@ export const ItemDetailContainer = () => {
     const location= useLocation()
     return (
         <div>
-            <ItemDetail propiedad={location.state.producto} />
+            <ItemDetail producto={location.state.producto} />
         </div>
     )
 }

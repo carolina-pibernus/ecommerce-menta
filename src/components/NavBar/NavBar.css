@@ -1,26 +1,28 @@
 nav {
-    width: 100%;
-    margin: 0% 0% 2% 0%;
+  width: 100%;
+  margin: 0%;
   background-color: #86d4b0;
 }
 nav ul {
-    padding-left: 5%;
-    padding-right: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 0%;
+  padding-bottom: 0%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: justify;
   align-items: center;
   list-style: none;
 }
 
-nav ul li{
-    font-size: 18px;
+nav ul li {
+  font-size: 17px;
   text-decoration: none;
   color: #277950;
+  padding: 0%;
 }
 nav ul li:hover {
   color: mintcream;
-  font-size: larger; 
 }
 
 .subMenu {
@@ -28,12 +30,10 @@ nav ul li:hover {
 }
 .menuProductos:hover .subMenu {
   display: inline;
-  position: fixed;
   z-index: 5;
-  background-color: #86d4b0;
-  opacity: 90%;
+  background-color: #98dbbc;
   padding-left: 0%;
- 
+  position: absolute;
 }
 .menuProductos:hover .subMenu li {
   padding: auto;
@@ -41,10 +41,8 @@ nav ul li:hover {
   text-align: left;
 }
 .menuProductos {
-  font-size: 18px;
+  font-size: 17px;
   text-decoration: none;
   color: #277950;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin: 0%;
 }
-

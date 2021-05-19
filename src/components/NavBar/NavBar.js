@@ -23,7 +23,7 @@ function NavBar () {
             </li>
 
             <Link to="/Contacto"><li>CONTACTO</li></Link>
-            {logged ? <Link to="/orders">MIS COMPRAS</Link> : null} 
+            {logged ? <Link to="/orders"><li>COMPRAS</li></Link> : null} 
             <Link to="/cart"><li> {articulos.length > 0 ? <CartWidgetFull /> : <CartWidget />} </li></Link>
           </ul>
         </nav>

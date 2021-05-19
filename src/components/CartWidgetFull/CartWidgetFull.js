@@ -1,13 +1,14 @@
 import React, {useContext} from 'react'
 import { CartContext } from '../../context/CartContext/CartContext'
 import FullCartIcon from "./FullCartIcon.svg"
+import './CartWidgetFull.css'
 
 function CartWidgetFull (){
     const cart = useContext(CartContext)
     return (
-        <div>
+        <div className="cartWidgetFull">
         <img src={FullCartIcon} alt="Icono Cart"/>
-        <p> ( {cart[3]} ) </p>
+        <span> {cart[3]}  </span>
         </div>
     )
 }

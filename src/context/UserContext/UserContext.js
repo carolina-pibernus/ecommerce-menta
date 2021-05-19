@@ -21,17 +21,17 @@ export const UserProvider = (props) => {
     }
 
     const getUser = async () => {
-        const isLogged = firebase.auth().onAuthStateChanged((u)=> {
+        firebase.auth().onAuthStateChanged((u)=> {
                 u ? loggedUser() : setLogged(false)  
               });
         }
         useEffect(() => {
             getUser()
            
-        }, [])
+        })
     
     return (
-        <UserContext.Provider value={[user, logged, userName]}> {props.children} </UserContext.Provider>
+        <UserContext.Provider value={[ logged,user, userName]}> {props.children} </UserContext.Provider>
     )
 }
 

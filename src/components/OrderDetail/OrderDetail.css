@@ -1,0 +1,60 @@
+.order {
+    background-color: #dff3e9;
+    width: 80%;
+    margin: 1% 10% 1% 10%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 3;
+    grid-template-areas: 
+    "orderID orderDate"
+    "orderDescription orderDescription"
+    "orderTotal orderTotal";
+    border-radius: 10px;
+}
+
+h5.orderID {
+    font-size: 15px;
+    width: 80%;
+    text-align:left;
+    grid-area: orderID;
+    padding:2% 0% 2% 0%;
+    text-indent: 5%;
+    margin-top: 2%;
+}
+ul.orderDescription {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+    grid-area: orderDescription;
+    margin-top: 0%;
+}
+ul.orderDescription li{
+    text-align: left;
+    margin: 1%;
+}
+
+.orderDate {
+    grid-area: orderDate;
+    font-size: 15px;
+    text-align: center;
+}
+.orderTotal {
+    grid-area: orderTotal;
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
+    padding: 1%;
+    text-align: left;
+    justify-content: space-between;
+    border-top: rgb(114, 179, 170) 1px solid;
+}
+
+ul.orderTotal li {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-weight: bold;
+}

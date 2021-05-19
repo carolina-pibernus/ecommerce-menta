@@ -6,7 +6,7 @@ export const ProductsContext = createContext()
 
 export const ProductsProvider = (props) => {
     const [productos, setProductos] = useState([])
-    const getProductos = async () => {
+    const getProductos = () => {
         db.collection('items').onSnapshot((querySnapshot) => {
             const docs = []
             querySnapshot.forEach((doc) => {

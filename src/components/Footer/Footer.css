@@ -2,5 +2,23 @@
     padding: 2%;
     min-height: 50px;
     background-color: #86d4b0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    color: #277950;
   
+}
+.footer ul {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin:1%;
+    padding:0%;
+    text-align: left;
+}
+.footer ul li {
+    margin:1%;
+    text-align: left;
 }

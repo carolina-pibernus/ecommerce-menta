@@ -1,0 +1,32 @@
+.divForm {
+    width: 90%;
+   align-self: center;
+   margin: 2%;
+
+}
+.divForm h4{
+    text-align: left;
+}
+.userData{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.userData h5{
+    margin-top: 1%;
+}
+.userName{
+    margin-top: 1%;
+    text-transform: capitalize;
+}
+
+.checkoutForm {
+    margin-top: 5%;
+}
+.checkoutForm div label{
+    text-align: left;
+}
+.total {
+    margin-top: 3%;
+}

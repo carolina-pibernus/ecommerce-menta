@@ -18,3 +18,14 @@
     display: list-item;
     text-align: left;
 }
+.divCheckout h3 {
+    color: #277950;
+
+}
+.checkoutEnd {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2% auto 2% auto;
+}

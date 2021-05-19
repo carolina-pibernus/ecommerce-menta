@@ -1,11 +1,12 @@
-p {
+
+.counter {
+    display:flex;
+    flex-direction: row ;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 6%;
+}
+.counter p {
     color: #277950;
-    font-size: 16px;
-    padding-top: 2%;
-}
-.oculto{
-    display: none;
-}
-.visible {
-    display:show;
+    font-size: 15px;
 }

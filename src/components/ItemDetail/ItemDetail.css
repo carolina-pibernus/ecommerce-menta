@@ -1,15 +1,3 @@
-.fotoDetalle {
-    margin: 3%;
-    width:400px;
-    border-radius: 10px;
-    grid-area: fotoDetalle;
-}
-.ocultar {
-    display: none;
-}
-.mostrar {
-    display: show; 
-}
 .itemDetail {
     margin: 4%;
     background-color: mintcream;
@@ -25,9 +13,28 @@
 }
 .contenedorPropiedades {
     grid-area: contenedorPropiedades;
+    padding: 1%;
+    margin: 1%;
 }
 .itemNombre {
     grid-area: itemNombre;
     color: rgb(5, 109, 83);
-    
+    padding-top: 5%;   
+}
+.fotoDetalle {
+    margin: 3%;
+    width:400px;
+    border-radius: 10px;
+    grid-area: fotoDetalle;
+}
+.itemDescription{
+    margin: auto 5% auto 5%;
+}
+.stock {
+    color: rgb(5, 109, 83);
+    font-size: 13px;
+}
+.itemAgregado {
+    color:rgb(5, 109, 83);
+    font-size: 14px;
 }

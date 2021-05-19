@@ -11,7 +11,7 @@ const Cart = () => {
   const [logged] = useContext(UserContext)
            
   return (
-        <div>
+        <div className="cart">
           <h3>Tu Carrito</h3>
 
          {articulos.map((articulo)=> {
@@ -25,7 +25,7 @@ const Cart = () => {
                   <li>Cantidad: {articulo.cantidad}</li>
                   <li>Subtotal: $ {subtotal}</li>
                 </ul>
-                <Button classes="botonRemove button ui classic" text="Eliminar Item" click={()=> {
+                <Button classes="botonRemove button ui classic compact" text="Eliminar Item" click={()=> {
                  const filtrarItems = articulos.filter((art) => {
                  return art !== articulo});    setArticulos(filtrarItems)}}/>
                
@@ -33,14 +33,15 @@ const Cart = () => {
               </div>  
              )
          })}
+         <div className="cartResumen">
           <h4>{articulos.length > 0 ? `Cantidad de Items: ${cantidadItems}` : null}</h4>
-          <h4>{articulos.length === 0 ? "Aún no sumaste productos" : `Total de compra: ${cartTotal}`} </h4>
-          {articulos.length === 0 ? <LinkButton linkTo="/productos" classes="ui button teal" text="Ir a Productos"/>
-          : <div> 
-            <LinkButton linkTo={logged ? "checkout" : "login"} classes="ui button olive" text="Continuar Compra"/> 
-            <Button classes="ui button classic" text="Vaciar Carrito" click={() => {setArticulos([])}}/>
+          <h4>{articulos.length === 0 ? "Aún no sumaste productos" : `Total de compra: $ ${cartTotal}`} </h4>
+          {articulos.length === 0 ? <LinkButton linkTo="/productos" classes="ui button teal compact" text="Ir a Productos"/>
+          : <div className="divButtons"> 
+            <LinkButton linkTo={logged ? "checkout" : "login"} classes="ui button olive compact" text="Continuar Compra"/> 
+            <Button classes="ui button classic  inverted compact" text="Vaciar Carrito" click={() => {setArticulos([])}}/>
             </div>}
-          
+          </div>
         </div>
     )
 }

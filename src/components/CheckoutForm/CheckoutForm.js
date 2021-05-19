@@ -1,26 +1,28 @@
 import React, {useContext, useState} from 'react'
 import 'semantic-ui-css/semantic.min.css'
-import './OrderForm.css'
+import './CheckoutForm.css'
 import {CartContext} from '../../context/CartContext/CartContext'
 import {UserContext} from '../../context/UserContext/UserContext'
 import { ProductsContext } from '../../context/ProductsContext/ProductsContext'
 import {db} from '../../firebase'
+import { LinkButton } from '../Buttons/Buttons'
 
 const initialValues = {
-    payment: "mercadopago",
+    payment: "Mercado Pago",
+    phone: "",
 }
 
 const OrderForm = ({add, setIsAdded}) => {
     const [articulos, setArticulos, cartTotal, cantidadItems]= useContext(CartContext)
     const products = useContext(ProductsContext)
-    const [user] = useContext(UserContext)
-    const [payment, setPayment] = useState(initialValues)
+    const [logged, user] = useContext(UserContext)
+    const [values, setValues] = useState(initialValues)
     const completeOrder = {
         buyerName: user.displayName,
-        buyerPhone: user.phoneNumber,
         buyerEmail: user.email, 
         buyerUid: user.uid, 
-        payment: payment.payment,
+        buyerPhone: values.phone,
+        payment: values.payment,
         total: cartTotal,
         totalItems: cantidadItems, 
         detail: articulos,
@@ -45,41 +47,46 @@ const OrderForm = ({add, setIsAdded}) => {
         e.preventDefault();
         add(completeOrder);
         setIsAdded(true)
-        setPayment({ ...initialValues });
+        setValues({ ...initialValues });
         setArticulos([])
         updateStock()
       }
     const handleOnChange = (e) => {
        const { name, value } = e.target;
-       setPayment({ ...payment, [name]: value });
+       setValues({ ...values, [name]: value });
       };  
-
+     console.log(user)
     return (
         <div className="divForm">
-            <h4>Revisa tus datos</h4>
-            <div>
-                <h5>Comprador: {user.displayName}</h5>
-                <h5>Mail: {user.uid}</h5>
-                <h5>Teléfono: </h5>
+        { logged ? 
+        <div>
+            <h3>Completa tu compra</h3>
+            <div className="userData">
+                <h5 className="userName">Comprador: {user.displayName}</h5>
+                <h5>{user.uid}</h5>
             </div>
-            <form className="ui form" onSubmit={handleSubmit}>
+            <form className="ui form checkoutForm" onSubmit={handleSubmit}>
                
                <div className={articulos.length === 0 ? "disabled field" : "required field"}>
+                   <label> Ingresa un numero de contacto</label>
+                   <input placeholder="Número de teléfono" onChange={handleOnChange} name="phone" type="tel" required minLength={8} maxLength={10}/>
+
                    <label>Elegí el medio de Pago</label>
-                <select required name="payment" value={payment.payment} onChange={handleOnChange}>
-                    <option value="mercadopago">Mercado Pago</option>
-                    <option value="efectivo">Efectivo</option>
-                    <option value="transferencia">Transferencia</option>
+                <select required name="payment" value={values.payment} onChange={handleOnChange}>
+                    <option value="Mercado Pago">Mercado Pago</option>
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Transferencia">Transferencia</option>
                 </select>
                </div> 
 
-             <div>
+             <div className="total">
               <h4>Cantidad de articulos: {cantidadItems}</h4>
               <h4>Total de compra: $ {cartTotal} </h4>
              </div>
                <button className={`ui button olive ${articulos.length === 0 && "disabled"}`}>Confirmar Pedido</button>
             </form> 
             
+        </div> : <div><h5> Ingresa al sitio para poder comprar </h5> <LinkButton linkTo="/login" classes="ui button classic" text="Ingresar"/></div> }
         </div>
     )
 }

@@ -1,0 +1,20 @@
+.contacto {
+    background-color: #dff3e9;
+    width: 80%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.contacto h3 {
+    color: #277950;
+}
+.contacto ul {
+    display: flex;
+    flex-direction: column;
+    margin: 1%;
+    padding: 0%;
+}
+.contacto ul li{
+    margin: 1%;
+}

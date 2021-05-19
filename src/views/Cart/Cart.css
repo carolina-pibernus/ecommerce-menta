@@ -1,3 +1,6 @@
+.cart {
+    margin-bottom: 2%;
+}
 .itemCart {
     background-color: mintcream;
     opacity: 80%;
@@ -42,4 +45,16 @@ ul.itemDescription li{
 
 .botonRemove {
     grid-area: botonRemove;
+}
+.divButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.cartResumen{
+    background-color: rgb(163, 212, 188);
+    width: 80%;
+    border-radius: 10px;
+    margin:auto;
+    padding: 1%;
 }

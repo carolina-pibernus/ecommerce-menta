@@ -1,0 +1,4 @@
+.cartWidgetFull{
+    display: flex;
+    flex-direction: row;
+}

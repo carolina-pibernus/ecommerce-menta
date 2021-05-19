@@ -1,0 +1,23 @@
+.itemLista {
+    align-self: center;
+    width: 200px;
+    margin: 0% 2% 2% 2%;
+    font-size: 14px;
+    font-weight: normal;
+}
+.itemLista a:hover div{
+    font-size: 14px;
+    background-color:#dff3e9;
+   
+    
+}
+h4.tituloItem {
+    color: #277950;
+    font-size: 18px;
+    margin: 1% auto 1% auto;
+}
+.precioItem {
+    font-size: 16px ;
+    margin: 1% auto 2% auto;
+    color: rgb(49, 49, 49)
+}

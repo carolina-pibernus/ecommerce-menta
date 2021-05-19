@@ -4,7 +4,16 @@ import './Footer.css'
 function Footer() {
     return (
         <div className="footer">
-            <p>Desarrollado por Carolina Pibernus</p>
+            <ul>
+                <li>MENTA</li>
+                <li>Tel: (011)4555-5555</li>
+                <li>Mail: menta@mail.com</li>
+            </ul>
+            <ul>
+                <li>Desarrollado por Carolina Pibernus</li>
+                <li>Mayo 2021</li>
+            </ul>
+        
         </div>
     )
 }

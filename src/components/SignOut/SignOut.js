@@ -14,7 +14,7 @@ const SignOut = () => {
   }
   return (
     <div>
-      <Button classes="ui button inverted compact" text="Salir" click={handleOnClick}/>
+      <Button classes="ui button inverted compact mini" text="Salir" click={handleOnClick}/>
     </div>
   )
 }

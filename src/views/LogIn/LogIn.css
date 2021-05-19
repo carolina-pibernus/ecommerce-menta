@@ -1,0 +1,22 @@
+.logInForm {
+    background-color: #dff3e9;
+    width: 80%;
+    border-radius: 10px;
+    align-self: center;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    padding-bottom: 2%;       
+    margin-bottom: 1%;
+}
+.tituloLogIn {
+    color: #277950;
+}
+label {
+    text-align: left;
+}
+.formulario{
+    width: 100%;
+}

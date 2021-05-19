@@ -1,25 +1,26 @@
 import 'semantic-ui-css/semantic.min.css'
-import '../ItemListContainer/ItemListContainer.css'
+import './Item.css'
+import React from 'react'
 import {Link} from 'react-router-dom'
-import { Card, Image } from 'semantic-ui-react'
-
 
 
 function Item ({producto}) {  
         return (  
           <div className="itemLista">
             <Link to={{pathname:`/productos/${producto.categoryId}/${producto.id}`, state:{producto:producto}}}> 
-             <Card>
-              <Image src={producto.image} wrapped ui={false} />
-              <Card.Content>
-                <Card.Header>{producto.title}</Card.Header>
-                <Card.Meta>
-                 <span className='date'>{producto.price}</span>
-                </Card.Meta>
-                <button className='ui olive button'>Ver Detalle</button>
+             <div className="ui card">
+               <div className="image">
+              <img src={producto.image} alt="item"/>
+              </div>
+              <div className="content">
+                <h4 className="tituloItem">{producto.title}</h4>
+                <div className="meta">
+                 <span className='precioItem'> $ {producto.price}</span>
+                 </div>
+                <button className='ui olive button compact'>Ver Detalle</button>
 
-              </Card.Content>     
-             </Card>
+              </div>     
+             </div>
              </Link>
           </div>   
         )

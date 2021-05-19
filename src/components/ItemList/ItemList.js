@@ -4,16 +4,16 @@ import React, {useContext} from 'react'
 import {ProductsContext} from '../../context/ProductsContext/ProductsContext'
 
 
-const ItemList = (categoria) => {
-    const listaProd = useContext(ProductsContext)  
-    const productos = categoria.categoria === "todo" ? listaProd : listaProd.filter((prod) => {
-        return prod.categoryId === categoria.categoria
+const ItemList = ({categoria}) => {
+    const productos = useContext(ProductsContext)  
+    const listaProductos = categoria === "todo" ? productos : productos.filter((prod) => {
+        return prod.categoryId === categoria
     })
 
     return (
        
            <div className="listado">
-                {productos.map((producto) => {
+                {listaProductos.map((producto) => {
                      return (
                    <Item producto={producto} key={producto.id}/>
 
