@@ -3,12 +3,12 @@ import "semantic-ui-css/semantic.min.css";
 import "./Item.css";
 
 function Item({ producto }) {
-  const activeNoStock = producto.stock <= 0 ? "stockWarning" : "ocultar"
+  const activeNoStock = producto.stock <= 0 ? "stockWarning" : "ocultar";
   return (
     <div className="itemLista">
       <div className="ui card">
         <div className="image">
-          <img src={producto.image} alt="item" className="imagenItem"/>
+          <img src={producto.image} alt="item" className="imagenItem" />
           <p className={activeNoStock}> Sin stock</p>
         </div>
         <div className="content">

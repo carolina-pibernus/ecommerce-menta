@@ -1,9 +1,8 @@
-import cartIcon from "./cartIcon.svg"
+import React from 'react'
+import cartIcon from "./cartIcon.svg";
 
-function CartWidget (){
-    return (
-        <img src={cartIcon} alt="Icono Cart"/>
-    )
+function CartWidget() {
+  return <img src={cartIcon} alt="Icono Cart" />;
 }
 
-export default CartWidget
+export default CartWidget;

@@ -1,30 +1,32 @@
-import React, {useContext} from 'react'
-import { UserContext } from '../../context/UserContext/UserContext'
-import { OrdersContext } from '../../context/OrdersContext/OrdersContext'
-import OrderDetail from '../../components/OrderDetail/OrderDetail'
+import React, { useContext } from "react";
+import { UserContext } from "../../context/UserContext/UserContext";
+import { OrdersContext } from "../../context/OrdersContext/OrdersContext";
+import OrderDetail from "../../components/OrderDetail/OrderDetail";
 
 const Orders = () => {
-    const [logged] = useContext(UserContext)
-    const userOrders = useContext(OrdersContext)
-    
-    return (
-        <div>
-            <h3> Mis Compras</h3>
+  const [logged] = useContext(UserContext);
+  const userOrders = useContext(OrdersContext);
 
-            {logged ? userOrders.map((order) => {
-                return (
-                    <div  key={order.id}>
-                      <OrderDetail order={order} />
-                     </div> 
-                )
-            }) : <h5>Aún no has realizado ninguna compra</h5> }
-            
-        </div>
-    )
-}
+  return (
+    <div>
+      <h3> Mis Compras</h3>
 
-export default Orders
+      {logged ? (
+        userOrders.map((order) => {
+          return (
+            <div key={order.id}>
+              <OrderDetail order={order} />
+            </div>
+          );
+        })
+      ) : (
+        <h5>Aún no has realizado ninguna compra</h5>
+      )}
+    </div>
+  );
+};
 
+export default Orders;
 
 /*
  const [user, logged] = useContext(UserContext)

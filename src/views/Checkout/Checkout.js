@@ -1,8 +1,9 @@
-import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
 import React, { useState } from "react";
-import "./Checkout.css";
 import { db } from "../../firebase";
 import { LinkButton } from "../../components/Buttons/Buttons";
+import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
+import "./Checkout.css";
+
 
 const Checkout = () => {
   const [orderID, setOrderID] = useState("");
@@ -20,12 +21,17 @@ const Checkout = () => {
       <div className="checkoutEnd">
         <h3>¡Gracias por tu compra!</h3>
         <h5>Tu código de orden es {orderID} </h5>
-        <LinkButton linkTo="/orders" classes="ui button compact classic" text="Ver Compras" />
-
+        <LinkButton
+          linkTo="/orders"
+          classes="ui button compact classic"
+          text="Ver Compras"
+        />
       </div>
     ) : (
       <div className="ui active inverted dimmer">
-        <div className="ui text loader">Por favor aguarda, estamos procesando tu pedido</div>{" "}
+        <div className="ui text loader">
+          Por favor aguarda, estamos procesando tu pedido
+        </div>{" "}
       </div>
     );
 

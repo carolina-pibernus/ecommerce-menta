@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
-import Counter from "../Counter/Counter.js";
-import "./ItemDetail.css";
-import { Button, LinkButton } from "../Buttons/Buttons";
 import { CartContext } from "../../context/CartContext/CartContext";
+import Counter from "../Counter/Counter.js";
+import { Button, LinkButton } from "../Buttons/Buttons";
+import "./ItemDetail.css";
 
 function ItemDetail({ producto }) {
   const [articulos, setArticulos] = useContext(CartContext);

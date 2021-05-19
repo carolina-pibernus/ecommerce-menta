@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { Button } from "../Buttons/Buttons";
 import "semantic-ui-css/semantic.min.css";
 import "./Counter.css";
-import { Button } from "../Buttons/Buttons";
+
 
 const Counter = ({ setear, producto }) => {
   const [count, setCount] = useState(0);
